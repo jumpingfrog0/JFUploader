@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JFUploader_Example' do
+  pod 'JFUploader', :path => '../'
+
+  target 'JFUploader_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

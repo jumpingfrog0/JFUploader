@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Asynchronous file uploader for iOS.
                        DESC
 
   s.homepage         = 'https://github.com/jumpingfrog0/JFUploader'
@@ -34,7 +34,7 @@ TODO: Add long description of the pod here.
   #   'JFUploader' => ['Source/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Source/Classes/**/*.h'
-  # s.frameworks = 'Foundation', 'UIKit'
+  s.public_header_files = 'Source/Classes/**/*.h'
+  s.frameworks = 'Foundation', 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

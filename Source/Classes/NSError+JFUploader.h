@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  NSError+JFUploader.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,10 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import <Foundation/Foundation.h>
 
-@interface JFViewController : UIViewController
+@interface NSError (JFUploader)
+
++ (NSError *)jf_uploader_errorWithCode:(NSInteger)code message:(NSString *)message;
 
 @end

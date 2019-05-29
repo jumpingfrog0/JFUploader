@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  JFUploadDataProtocol.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,13 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import <Foundation/Foundation.h>
 
-@interface JFViewController : UIViewController
+@protocol JFUploadDataProtocol<NSObject>
+
+- (NSData *)cacheData;
+- (NSData *)backupData;
+- (NSData *)uploadData;
+- (NSString *)mimeType;
 
 @end

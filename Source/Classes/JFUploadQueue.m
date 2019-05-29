@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  JFUploadQueue.m
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,43 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "JFUploadQueue.h"
+#import "JFUploadTask.h"
+#import "_JFUploadOperation.h"
 
-@interface JFViewController : UIViewController
+@interface JFUploadQueue ()
+
+@property (nonatomic, strong) NSOperationQueue *queue;
+
+@end
+
+@implementation JFUploadQueue
+
++ (instancetype)sharedInstance
+{
+    static JFUploadQueue *shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shared = [[JFUploadQueue alloc] init];
+    });
+
+    return shared;
+}
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.queue                             = [[NSOperationQueue alloc] init];
+        self.queue.maxConcurrentOperationCount = 1;
+    }
+    return self;
+}
+
++ (void)runTask:(JFUploadTask *)task
+{
+    _JFUploadOperation *operation = [[_JFUploadOperation alloc] initWithTask:task];
+    JFUploadQueue *queue          = [JFUploadQueue sharedInstance];
+    [queue.queue addOperation:operation];
+}
 
 @end

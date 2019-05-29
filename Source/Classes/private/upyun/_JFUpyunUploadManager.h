@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFUpyunUploadManager.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,9 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "_JFUpyunUploadOperation.h"
 
-@interface JFViewController : UIViewController
+@interface _JFUpyunUploadManager : NSObject
 
++ (void)schedule:(_JFUpyunUploadOperation *)operation;
 @end

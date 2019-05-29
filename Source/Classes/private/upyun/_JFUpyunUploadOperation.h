@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFUpyunUploadOperation.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,15 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "_JFUploadOperationProtocol.h"
+#import <JFHTTP/JFHTTPRequest.h>
 
-@interface JFViewController : UIViewController
+@interface _JFUpyunUploadOperation : NSOperation <_JFUploadOperationProtocol>
+@property (nonatomic, copy) NSString *policy;
+@property (nonatomic, copy) NSString *signature;
+@property (nonatomic, copy) NSString *baseURL;
+@property (nonatomic, copy) NSString *bucket;
+@property(nonatomic, copy) NSString *operator;
 
+@property (nonatomic, strong) JFHTTPRequest *request;
 @end

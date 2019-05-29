@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFUploadOperationProtocol.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,19 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import <Foundation/Foundation.h>
 
-@interface JFViewController : UIViewController
+typedef void (^JFUploaderOperationSuccessBlock)(NSDictionary *result);
+typedef void (^JFUploaderOperationProgressBlock)(NSProgress *progress);
+typedef void (^JFUploaderOperationFailureBlock)(NSError *error);
+
+@protocol _JFUploadOperationProtocol <NSObject>
+
+@property (nonatomic, strong) NSData *data;
+@property (nonatomic, strong) NSString *mime;
+
+@property (nonatomic, copy) JFUploaderOperationSuccessBlock success;
+@property (nonatomic, copy) JFUploaderOperationProgressBlock progress;
+@property (nonatomic, copy) JFUploaderOperationFailureBlock failure;
 
 @end

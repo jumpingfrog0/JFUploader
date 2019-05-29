@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFImageUploadCache.m
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,35 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "_JFImageUploadCache.h"
+#import "JFFileManager.h"
+#import <JFFoundation/NSString+JFEncrypt.h>
+//#import <SDWebImage/SDImageCache.h>
 
-@interface JFViewController : UIViewController
+@implementation _JFImageUploadCache
+
+- (NSString *)cachePath
+{
+    return [self.path stringByAppendingPathComponent:[self.key jf_md5]];
+}
+
+#pragma mark--
+- (NSString *)cacheObjectBeforeUploading:(id)object
+{
+    NSString *cachePath = self.cachePath;
+    [JFFileManager object:object writeToFile:cachePath atomically:NO];
+    return cachePath;
+}
+
+- (NSString *)cacheObjectWhenUploaded:(id)object
+{
+    // todo
+//    [[SDImageCache sharedImageCache] storeImage:nil
+//                           recalculateFromImage:NO
+//                                      imageData:object
+//                                         forKey:self.key
+//                                         toDisk:YES];
+    return nil;
+}
 
 @end

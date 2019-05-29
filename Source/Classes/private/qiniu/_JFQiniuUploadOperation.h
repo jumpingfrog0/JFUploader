@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFQiniuUploadOperation.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,18 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "_JFUploadOperationProtocol.h"
+#import <JFHTTP/JFHTTPRequest.h>
 
-@interface JFViewController : UIViewController
+@interface _JFQiniuUploadOperation : NSOperation <_JFUploadOperationProtocol>
+
+@property (nonatomic, copy) NSString *bucket;       // 存储空间
+@property (nonatomic, copy) NSString *deadline;     // 失效时间
+@property (nonatomic, copy) NSString *baseURL;      // 上传地址
+@property (nonatomic, copy) NSString *token;        // 令牌
+@property (nonatomic, copy) NSString *uriPrefix;    // 存储前缀
+
+@property (nonatomic, strong) JFHTTPRequest *request;
+@property (nonatomic, strong) NSURLSessionUploadTask *task;
 
 @end

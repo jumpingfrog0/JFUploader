@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFVideoUploadCache.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,13 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import <Foundation/Foundation.h>
+#import "JFUploadCacheProtocol.h"
 
-@interface JFViewController : UIViewController
+@interface _JFVideoUploadCache : NSObject <JFUploadCacheProtocol>
+
+@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) NSString *path;
+
 
 @end

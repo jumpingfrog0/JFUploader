@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  NSError+JFUploader.m
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,18 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "NSError+JFUploader.h"
 
-@interface JFViewController : UIViewController
+@implementation NSError (JFUploader)
+
++ (NSError *)jf_uploader_errorWithCode:(NSInteger)code message:(NSString *)message
+{
+    NSError *error = [NSError errorWithDomain:@"JF-uploader"
+                                         code:code
+                                     userInfo:@{
+                                         NSLocalizedDescriptionKey: message.length > 0 ? message : @"",
+                                     }];
+    return error;
+}
 
 @end

@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  JFImageUploadTask.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,25 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "JFHTTPRequest.h"
+#import "JFUploadTask.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface JFViewController : UIViewController
+@interface JFImageUploadTask : JFUploadTask
+
+- (void)setImage:(UIImage *)image;
+- (void)setImagePath:(NSString *)imagePath;
+- (void)setImageURL:(NSURL *)imageURL;
+
+- (void)setCompress:(BOOL)compress;
+- (void)setPersistence:(BOOL)persistence;
+
+- (void)setCacheKey:(NSString *)cacheKey;
+- (void)setCachePath:(NSString *)cachePath;
+
+- (void)setPolicy:(NSString *)policy;
+- (void)setSignature:(NSString *)signature;
+- (void)setTokenRequest:(JFHTTPRequest *)request;
 
 @end

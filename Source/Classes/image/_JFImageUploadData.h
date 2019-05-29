@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFImageUploadData.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,17 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import <Foundation/Foundation.h>
+#import "JFUploadDataProtocol.h"
+#import <UIKit/UIKit.h>
 
-@interface JFViewController : UIViewController
+@interface _JFImageUploadData : NSObject <JFUploadDataProtocol>
+
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSString *path;
+@property (nonatomic, strong) NSURL *url;
+
+@property (nonatomic, assign) BOOL compress;
+@property (nonatomic, assign) BOOL persistence;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  JFUploadTask.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,27 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import <Foundation/Foundation.h>
+#import "JFUploadDataProtocol.h"
+#import "JFUploadCacheProtocol.h"
 
-@interface JFViewController : UIViewController
+@protocol _JFUploadOperationProtocol;
+
+typedef NSData * (^JFUploadTaskWillUploadBlock)(NSData *uploadData, NSString *backupPath);
+typedef void (^JFUploadTaskSuccessBlock)(NSDictionary *result, NSString *cachePath);
+typedef void (^JFUploadTaskProgressBlock)(NSProgress *);
+typedef void (^JFUploadTaskFailureBlock)(NSError *error);
+
+@interface JFUploadTask : NSObject
+
+@property (nonatomic, strong) id<JFUploadDataProtocol> data;
+@property (nonatomic, strong) id<JFUploadCacheProtocol> cache;
+
+@property (nonatomic, strong) NSOperation<_JFUploadOperationProtocol> *operation;
+
+@property (nonatomic, copy) JFUploadTaskWillUploadBlock willUpload;
+@property (nonatomic, copy) JFUploadTaskSuccessBlock success;
+@property (nonatomic, copy) JFUploadTaskProgressBlock progress;
+@property (nonatomic, copy) JFUploadTaskFailureBlock failure;
 
 @end

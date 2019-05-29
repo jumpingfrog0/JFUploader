@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFVideoUploadData.m
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,59 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "_JFVideoUploadData.h"
 
-@interface JFViewController : UIViewController
+@interface _JFVideoUploadData ()
+
+@property (nonatomic, strong) NSData *originData;
+@property (nonatomic, strong) NSData *uploadData;
+
+@end
+
+@implementation _JFVideoUploadData
+
+- (NSData *)originData
+{
+    if (_originData) {
+        return _originData;
+    }
+
+    if (self.data) {
+        _originData = self.data;
+    } else if (self.path) {
+        _originData = [NSData dataWithContentsOfFile:self.path];
+    } else if (self.url) {
+        _originData = [NSData dataWithContentsOfURL:self.url];
+    }
+    return _originData;
+}
+
+- (NSData *)cacheData
+{
+    return self.uploadData;
+}
+
+- (NSData *)backupData
+{
+    if (self.persistence) {
+        return self.originData;
+    }
+
+    return nil;
+}
+
+- (NSData *)uploadData
+{
+    if (!_uploadData) {
+        _uploadData = self.originData;
+    }
+
+    return _uploadData;
+}
+
+- (NSString *)mimeType
+{
+    return @"video/mp4";
+}
 
 @end

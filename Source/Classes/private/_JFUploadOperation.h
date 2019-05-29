@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  _JFUploadOperation.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,11 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "JFUploadTask.h"
+#import <Foundation/Foundation.h>
 
-@interface JFViewController : UIViewController
+@interface _JFUploadOperation : NSOperation
+
+- (instancetype)initWithTask:(JFUploadTask *)task;
 
 @end

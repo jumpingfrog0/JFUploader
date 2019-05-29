@@ -1,5 +1,5 @@
 //
-//  JFViewController.h
+//  JFVideoUploadTask.h
 //  JFUploader
 //
 //  Created by jumpingfrog0 on 05/24/2019.
@@ -26,8 +26,24 @@
 //  THE SOFTWARE.
 //
 
-@import UIKit;
+#import "JFHTTPRequest.h"
+#import "JFUploadTask.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface JFViewController : UIViewController
+@interface JFVideoUploadTask : JFUploadTask
+
+- (void)setVideo:(NSData *)videoData;
+- (void)setVideoPath:(NSString *)videoPath;
+- (void)setVideoURL:(NSURL *)videoURL;
+
+//- (void)setCompress:(BOOL)compress;
+- (void)setPersistence:(BOOL)persistence;
+
+- (void)setCacheKey:(NSString *)cacheKey;
+- (void)setCachePath:(NSString *)cachePath;
+
+- (void)setToken:(NSString *)token;
+- (void)setTokenRequest:(JFHTTPRequest *)request;
 
 @end

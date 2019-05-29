@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14648D4A27FBD7868DDAF9C0 /* libPods-JFUploader_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C892402E79C3E7AE5AD4454D /* libPods-JFUploader_Tests.a */; };
+		362B5D19ED0998F042F756CB /* libPods-JFUploader_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC1B1CFDCAD435930483B78 /* libPods-JFUploader_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,9 +23,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		7503D524111B2EC9FFAC54BF /* Pods_JFUploader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0275C68C6894F4A53FEC321 /* Pods_JFUploader_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		F2B95E40D2036E93CB7AE4F7 /* Pods_JFUploader_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0E317CC5D5677F0C4A1FB2 /* Pods_JFUploader_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EC1B1CFDCAD435930483B78 /* libPods-JFUploader_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFUploader_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D6452BF9788914455FDE7B /* Pods-JFUploader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFUploader_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFUploader_Example/Pods-JFUploader_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5C0E317CC5D5677F0C4A1FB2 /* Pods_JFUploader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JFUploader_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* JFUploader_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JFUploader_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,7 +61,7 @@
 		7E020D0B7CCB29091DF42E23 /* Pods-JFUploader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFUploader_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JFUploader_Example/Pods-JFUploader_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFA644906CEEDD1C9FC2CA56 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E0275C68C6894F4A53FEC321 /* Pods_JFUploader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JFUploader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C892402E79C3E7AE5AD4454D /* libPods-JFUploader_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFUploader_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEBAA5ADA3E5C20E32B88D9 /* JFUploader.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = JFUploader.podspec; path = ../JFUploader.podspec; sourceTree = "<group>"; };
 		EBD6A853BA470BCD62C88A26 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FE1333414621F062BF0A418B /* Pods-JFUploader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFUploader_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFUploader_Tests/Pods-JFUploader_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				F2B95E40D2036E93CB7AE4F7 /* Pods_JFUploader_Example.framework in Frameworks */,
+				362B5D19ED0998F042F756CB /* libPods-JFUploader_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				7503D524111B2EC9FFAC54BF /* Pods_JFUploader_Tests.framework in Frameworks */,
+				14648D4A27FBD7868DDAF9C0 /* libPods-JFUploader_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +121,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				5C0E317CC5D5677F0C4A1FB2 /* Pods_JFUploader_Example.framework */,
-				E0275C68C6894F4A53FEC321 /* Pods_JFUploader_Tests.framework */,
+				0EC1B1CFDCAD435930483B78 /* libPods-JFUploader_Example.a */,
+				C892402E79C3E7AE5AD4454D /* libPods-JFUploader_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				1195A0C309F7CA4C9D477C7C /* [CP] Embed Pods Frameworks */,
+				6AEE1F2987055317D6D203D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,22 +290,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1195A0C309F7CA4C9D477C7C /* [CP] Embed Pods Frameworks */ = {
+		6AEE1F2987055317D6D203D9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JFUploader_Example/Pods-JFUploader_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/JFUploader/JFUploader.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-JFUploader_Example/Pods-JFUploader_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/JFUIKit/JFUIKit.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JFUploader.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JFUIKit.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JFUploader_Example/Pods-JFUploader_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JFUploader_Example/Pods-JFUploader_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		96564887B5078B6EFB6285AC /* [CP] Check Pods Manifest.lock */ = {

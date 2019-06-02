@@ -160,8 +160,8 @@ typedef NS_ENUM(NSInteger, JFUploadOperationState) {
         backupData = self.task.data.backupData;
     }
     if (backupData) {
-        if ([self.task.cache respondsToSelector:@selector(cacheObjectBeforeUploading:)]) {
-            backupPath = [self.task.cache cacheObjectBeforeUploading:backupData];
+        if ([self.task.cache respondsToSelector:@selector(cacheObjectBeforeUpload:)]) {
+            backupPath = [self.task.cache cacheObjectBeforeUpload:backupData];
         }
     }
 
@@ -182,8 +182,8 @@ typedef NS_ENUM(NSInteger, JFUploadOperationState) {
             cacheData = weakTask.data.cacheData;
         }
         if (cacheData) {
-            if ([weakTask.cache respondsToSelector:@selector(cacheObjectWhenUploaded:)]) {
-                cachePath = [weakTask.cache cacheObjectWhenUploaded:cacheData];
+            if ([weakTask.cache respondsToSelector:@selector(cacheObjectWhenUpload:)]) {
+                cachePath = [weakTask.cache cacheObjectWhenUpload:cacheData];
             }
         }
 

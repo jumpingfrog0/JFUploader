@@ -30,7 +30,7 @@
 
 @protocol JFUploadCacheProtocol<NSObject>
 
-- (NSString *)cacheObjectBeforeUploading:(id)object;
-- (NSString *)cacheObjectWhenUploaded:(id)object;
+- (NSString *)cacheObjectBeforeUpload:(id)object;
+- (NSString *)cacheObjectWhenUpload:(id)object;
 
 @end

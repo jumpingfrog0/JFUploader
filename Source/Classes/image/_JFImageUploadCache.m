@@ -39,14 +39,14 @@
 }
 
 #pragma mark--
-- (NSString *)cacheObjectBeforeUploading:(id)object
+- (NSString *)cacheObjectBeforeUpload:(id)object
 {
     NSString *cachePath = self.cachePath;
     [JFFileManager object:object writeToFile:cachePath atomically:NO];
     return cachePath;
 }
 
-- (NSString *)cacheObjectWhenUploaded:(id)object
+- (NSString *)cacheObjectWhenUpload:(id)object
 {
     // todo
 //    [[SDImageCache sharedImageCache] storeImage:nil

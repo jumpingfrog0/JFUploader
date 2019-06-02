@@ -53,6 +53,7 @@
 {
     if (self = [super init]) {
         self.queue                             = [[NSOperationQueue alloc] init];
+        // todo: only concurrent one?
         self.queue.maxConcurrentOperationCount = 1;
     }
     return self;

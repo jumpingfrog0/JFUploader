@@ -27,8 +27,12 @@
 //
 
 #import "JFViewController.h"
+#import "JFImageUploader.h"
+#import "MZDPermissionInspector.h"
 
-@interface JFViewController ()
+typedef void(^JFPermissionBlock)(BOOL valid);
+
+@interface JFViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -44,6 +48,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)uploadImage:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    
+    [MZDPermissionInspector checkPhotoPermissionWithPermissionBlock:^(BOOL valid) {
+        if (!valid) { return; }
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    } alertCancelBlock:nil alertCompleteBlock:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    [JFImageUploader uploadImage:image completion:nil];
+    
+    [self dismissViewControllerAnimated:picker completion:nil];
 }
 
 @end

@@ -27,13 +27,49 @@
 //
 
 #import "AppDelegate.h"
+#import <JFHTTP/JFHTTP.h>
+#import <JFUIKit/JFUIKit.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    JFHTTPClient *client = [JFHTTPClient sharedInstance];
+    client.baseURL = [NSURL URLWithString:@"https://easy-mock.com/mock/5cf157d33ce99970e41fb570/jumpingfrog0"];
+    client.mockBaseURL = [NSURL URLWithString:@"https://easy-mock.com/mock/5cf157d33ce99970e41fb570/jumpingfrog0"];
+    client.userAgent = @"JFHTTP/1.0";
+    client.authType = @"JFHTTP.Test";
+    client.sskey = @"test-sskey";
+    client.defaultParamsBlock = ^NSDictionary *{
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"device_mod_"] = @((NSInteger)[[NSDate date] timeIntervalSince1970]);
+        params[@"device_platform_"] = @"ios";
+        params[@"device_ver_"] = [[UIDevice currentDevice] systemVersion];
+        params[@"app_ver_"] = [UIDevice jf_appVersion];
+        return params;
+    };
+    [JFHTTPClient enableLog:YES];
+    [JFHTTPClient allowNotifyTaskDetail:YES];
+    
+//    [self testGetRequest];
+    
     return YES;
+}
+
+- (void)testGetRequest {
+    JFHTTPRequest *request = [[JFHTTPRequest alloc] init];
+    request.api = @"/getQiniuToken";
+    request.mock = YES;
+    request.sign = NO;
+    request.success = ^(NSDictionary *response) {
+        // you can convert json to model here.
+        NSLog(@"%@", response);
+    };
+    request.failure = ^(NSError *error) {
+        NSLog(@"%@", error);
+    };
+    
+    [JFHTTPClient send:request];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

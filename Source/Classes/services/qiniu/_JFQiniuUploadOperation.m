@@ -29,6 +29,7 @@
 #import "_JFQiniuUploadOperation.h"
 #import "NSError+JFUploader.h"
 #import "_JFQiniuUploadManager.h"
+#import <JFHTTP/JFHTTP.h>
 
 typedef NS_ENUM(NSInteger, JFQiniuUploadOperationState) {
     JFQiniuUploadOperationStateReady     = 0,
@@ -172,7 +173,7 @@ typedef NS_ENUM(NSInteger, JFQiniuUploadOperationState) {
     };
 
     // todo
-//    [JFHTTPManager send:self.request];
+    [JFHTTPClient send:self.request];
 }
 
 @end

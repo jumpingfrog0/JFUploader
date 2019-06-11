@@ -11,5 +11,6 @@
 #import "JFUploadQueue.h"
 #import "JFUploadTask.h"
 #import "JFImageUploadTask.h"
+#import "JFVideoUploadTask.h"
 
 #endif /* Header_h */

@@ -29,6 +29,8 @@
 #import "AppDelegate.h"
 #import <JFHTTP/JFHTTP.h>
 #import <JFUIKit/JFUIKit.h>
+#import <JFFoundation/JFFoundation.h>
+#import <JFThirdPartySet/GTMBase64.h>
 
 @implementation AppDelegate
 
@@ -52,6 +54,7 @@
     [JFHTTPClient allowNotifyTaskDetail:YES];
     
 //    [self testGetRequest];
+    [self generateQiniuUploadToken];
     
     return YES;
 }
@@ -70,6 +73,24 @@
     };
     
     [JFHTTPClient send:request];
+}
+
+- (void)generateQiniuUploadToken {
+    NSString *accessKey = @"";
+    NSDictionary *returnBody = @{
+                                 @"name" : @"test--1"
+                                 };
+    NSDictionary *policy = @{
+                             @"scope" : @"shardimages",
+                             @"deadline" : @(1560952800),
+                             @"returnBody" : returnBody,
+                             };
+    NSString *putPolicy = [policy jf_JSONString];
+    NSString *encodedPutPolicy = [GTMMZDBase64 stringByEncodingData:[putPolicy dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *sign = [encodedPutPolicy jf_SHA1];
+    NSString *encodedSign = [GTMMZDBase64 stringByEncodingData:[sign dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *uploadToken = [NSString stringWithFormat:@"%@:%@:%@",accessKey, encodedSign, encodedPutPolicy];
+    NSLog(@"%@", uploadToken);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

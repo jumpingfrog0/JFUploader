@@ -69,7 +69,8 @@
     NSString *fileName = @"file";
 
     NSDictionary *params = @{
-        @"token": operation.token,
+//        @"token": operation.token,
+        @"token": @"token",
     };
 
     AFHTTPRequestSerializer<AFURLRequestSerialization> *rs = manager.session.requestSerializer;

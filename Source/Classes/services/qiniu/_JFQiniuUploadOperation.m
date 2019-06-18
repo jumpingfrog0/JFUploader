@@ -110,7 +110,7 @@ typedef NS_ENUM(NSInteger, JFQiniuUploadOperationState) {
         self.progress = nil;
 
         if (self.failure) {
-            NSError *error = [NSError jf_uploader_errorWithCode:1 message:@"操作取消"];
+            NSError *error = [NSError jf_uploader_errorWithCode:1 message:@"Operation is canceled."];
             self.failure(error);
         }
         [self didChangeValueForKey:@"isCancelled"];
@@ -122,7 +122,7 @@ typedef NS_ENUM(NSInteger, JFQiniuUploadOperationState) {
 
     if ([self isCancelled]) {
         if (self.request.failure) {
-            NSError *error = [NSError jf_uploader_errorWithCode:1 message:@"操作取消"];
+            NSError *error = [NSError jf_uploader_errorWithCode:1 message:@"Operation is canceled."];
             self.request.failure(error);
         }
         self.state = JFQiniuUploadOperationStateFinished;
@@ -164,6 +164,7 @@ typedef NS_ENUM(NSInteger, JFQiniuUploadOperationState) {
 
     self.request.failure = self.failure;
     self.request.success = ^(NSDictionary *result) {
+        // todo: 返回结果解析
         weakSelf.baseURL   = result[@"upload_url"];
         weakSelf.bucket    = result[@"bucket"];
         weakSelf.deadline  = result[@"deadline"];

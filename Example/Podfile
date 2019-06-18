@@ -2,6 +2,7 @@
 target 'JFUploader_Example' do
   pod 'JFUploader', :path => '../'
   pod 'JFHTTP', :git => 'https://github.com/jumpingfrog0/JFHTTP.git'
+  pod 'JFThirdPartySet', :git => 'https://github.com/jumpingfrog0/JFThirdPartySet.git'
 
   target 'JFUploader_Tests' do
     inherit! :search_paths

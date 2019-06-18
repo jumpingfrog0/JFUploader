@@ -55,6 +55,9 @@
     task.failure = ^(NSError *error) {
         NSLog(@"%@", error);
     };
+    task.progress = ^(NSProgress *progress) {
+        NSLog(@"progress = %f", progress.completedUnitCount * 1.0 / progress.totalUnitCount);
+    };
     [JFUploadQueue runTask:task];
 }
 @end
